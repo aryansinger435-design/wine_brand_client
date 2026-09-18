@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: rgba(212, 175, 55, 0.15);
+  }
+
+  body {
+    background-color: #070305;
+    color: #F8F3EA;
+    overflow-x: hidden;
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0E0508;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3A101E;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5A162D;
+  }
+}
+
+/* Glassmorphism & Gold accents */
+.luxury-glass {
+  background: rgba(26, 8, 16, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.luxury-glass-card {
+  background: linear-gradient(180deg, rgba(38, 11, 23, 0.6) 0%, rgba(15, 6, 10, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.15);
+  transform: translateY(-4px);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FDF8E8 0%, #ECCB64 45%, #D4AF37 75%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(135deg, #ECCB64, #D4AF37, #8C6508) 1;
+}
+
+/* Luxury button styling */
+.btn-gold {
+  background: linear-gradient(135deg, #ECCB64 0%, #D4AF37 60%, #B8860B 100%);
+  color: #0A0406;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #F7DF8D 0%, #ECCB64 60%, #D4AF37 100%);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-wine-outline {
+  background: rgba(45, 12, 25, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #F8F3EA;
+  transition: all 0.3s ease;
+}
+
+.btn-wine-outline:hover {
+  background: rgba(70, 18, 38, 0.7);
+  border-color: #ECCB64;
+  color: #FFF;
+}
