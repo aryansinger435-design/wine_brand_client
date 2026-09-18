@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { WineCard } from "./WineCard";
+import { DEFAULT_WINES, CATEGORIES } from "../data/winesData";
 import {
   Wine,
   Search,
@@ -10,18 +11,11 @@ import {
 } from "lucide-react";
 
 export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
-  const [wines, setWines] = useState([]);
-  const [categories, setCategories] = useState([
-    "All",
-    "Red Wine",
-    "White Wine",
-    "Sparkling & Champagne",
-    "Rosé",
-    "Dessert & Fortified",
-  ]);
+  const [wines, setWines] = useState(DEFAULT_WINES);
+  const [categories, setCategories] = useState(CATEGORIES);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortBy, setSortBy] = useState("default");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const fetchWines = async () => {
@@ -39,20 +33,56 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
         params.append("sortBy", sortBy);
       }
 
-      const res = await fetch(`/api/wines?${params.toString()}`);
+      const apiBase = import.meta.env.VITE_API_URL || "";
+      const res = await fetch(`${apiBase}/api/wines?${params.toString()}`);
+      if (!res.ok) {
+        throw new Error(`Server status ${res.status}`);
+      }
       const data = await res.json();
 
-      if (data.success) {
+      if (data.success && Array.isArray(data.wines) && data.wines.length > 0) {
         setWines(data.wines);
         if (data.categories) {
           setCategories(data.categories);
         }
-      } else {
-        setError(data.message || "Unable to load vintage collection.");
+        return;
       }
+      throw new Error(data.message || "No data received from API");
     } catch (err) {
-      console.error("Fetch wines error:", err);
-      setError("Failed to connect with cellar server.");
+      // Graceful fallback to built-in cellar collection with local filtering
+      console.warn("Backend API unavailable, displaying curated cellar collection:", err.message);
+
+      let list = [...DEFAULT_WINES];
+
+      if (selectedCategory && selectedCategory !== "All") {
+        list = list.filter((w) => w.category === selectedCategory);
+      }
+
+      if (searchQuery && searchQuery.trim() !== "") {
+        const q = searchQuery.trim().toLowerCase();
+        list = list.filter(
+          (w) =>
+            w.name?.toLowerCase().includes(q) ||
+            w.tagline?.toLowerCase().includes(q) ||
+            w.region?.toLowerCase().includes(q) ||
+            w.grapeVariety?.toLowerCase().includes(q) ||
+            w.description?.toLowerCase().includes(q)
+        );
+      }
+
+      if (sortBy === "price_asc") {
+        list.sort((a, b) => a.price - b.price);
+      } else if (sortBy === "price_desc") {
+        list.sort((a, b) => b.price - a.price);
+      } else if (sortBy === "rating") {
+        list.sort((a, b) => b.rating - a.rating);
+      } else if (sortBy === "vintage") {
+        list.sort((a, b) => b.vintage - a.vintage);
+      }
+
+      setWines(list);
+      setCategories(CATEGORIES);
+      setError(null);
     } finally {
       setLoading(false);
     }
