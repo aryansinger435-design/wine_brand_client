@@ -29,35 +29,35 @@ export const Navbar = ({ onOpenAuth, onOpenProfile, onScrollToSection, onOpenSea
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 w-full max-w-full z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-noir-950/90 backdrop-blur-md border-b border-gold-500/20 py-3 shadow-luxury"
-          : "bg-gradient-to-b from-noir-950/95 via-noir-950/70 to-transparent py-5"
+          ? "bg-noir-950/95 backdrop-blur-md border-b border-gold-500/20 py-2.5 sm:py-3 shadow-luxury"
+          : "bg-gradient-to-b from-noir-950/95 via-noir-950/70 to-transparent py-3 sm:py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2">
           
           {/* Brand Logo */}
           <div
             onClick={() => onScrollToSection("hero")}
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group min-w-0 shrink"
           >
-            <div className="w-10 h-10 rounded-full border border-gold-400/40 bg-wine-900/60 flex items-center justify-center shadow-gold-glow group-hover:border-gold-400 transition-colors">
-              <Wine className="w-5 h-5 text-gold-400 transition-transform group-hover:scale-110" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gold-400/40 bg-wine-900/60 flex items-center justify-center shadow-gold-glow group-hover:border-gold-400 transition-colors shrink-0">
+              <Wine className="w-4 h-4 sm:w-5 sm:h-5 text-gold-400 transition-transform group-hover:scale-110" />
             </div>
-            <div>
-              <span className="font-serif tracking-[0.2em] sm:tracking-[0.25em] text-sm sm:text-lg md:text-xl font-bold uppercase gold-text-gradient block leading-none">
-             DHariwal wine
+            <div className="min-w-0">
+              <span className="font-serif tracking-[0.12em] sm:tracking-[0.22em] text-xs sm:text-base md:text-xl font-bold uppercase gold-text-gradient block leading-none truncate">
+                Dhariwal Wine
               </span>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-gold-400/80 font-medium block mt-1">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.3em] uppercase text-gold-400/80 font-medium block mt-0.5 sm:mt-1 truncate">
                 Grand Reserve Cellars
               </span>
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider uppercase text-cream-200/90">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 text-xs lg:text-sm font-medium tracking-wider uppercase text-cream-200/90 shrink-0">
             <button
               onClick={() => onScrollToSection("wines")}
               className="hover:text-gold-400 transition-colors duration-200"
@@ -85,26 +85,26 @@ export const Navbar = ({ onOpenAuth, onOpenProfile, onScrollToSection, onOpenSea
           </div>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center space-x-3 sm:space-x-4">
+          <div className="flex items-center space-x-1.5 sm:space-x-3 shrink-0">
             
             {/* Search Button */}
             <button
               onClick={onOpenSearch}
               aria-label="Search wines"
-              className="p-2.5 rounded-full text-cream-200/80 hover:text-gold-400 hover:bg-wine-900/50 transition-colors"
+              className="p-2 sm:p-2.5 rounded-full text-cream-200/80 hover:text-gold-400 hover:bg-wine-900/50 transition-colors"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Cellar Cart Button */}
             <button
               onClick={() => setIsCartOpen(true)}
               aria-label="View Cart"
-              className="relative p-2.5 rounded-full text-cream-200/90 hover:text-gold-400 hover:bg-wine-900/50 transition-colors"
+              className="relative p-2 sm:p-2.5 rounded-full text-cream-200/90 hover:text-gold-400 hover:bg-wine-900/50 transition-colors"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
               {totalCount > 0 && (
-                <span className="absolute top-0 right-0 w-5 h-5 bg-gold-500 text-noir-950 text-xs font-bold rounded-full flex items-center justify-center animate-pulse">
+                <span className="absolute top-0 right-0 w-4 h-4 sm:w-5 sm:h-5 bg-gold-500 text-noir-950 text-[10px] sm:text-xs font-bold rounded-full flex items-center justify-center animate-pulse">
                   {totalCount}
                 </span>
               )}
@@ -115,7 +115,7 @@ export const Navbar = ({ onOpenAuth, onOpenProfile, onScrollToSection, onOpenSea
               <div className="relative">
                 <button
                   onClick={() => setUserDropdown(!userDropdown)}
-                  className="flex items-center space-x-2 pl-3 pr-2 py-1.5 rounded-full bg-wine-900/40 border border-gold-500/30 hover:border-gold-400/80 transition-all text-sm"
+                  className="flex items-center space-x-1.5 sm:space-x-2 p-1 sm:pl-3 sm:pr-2 sm:py-1.5 rounded-full bg-wine-900/40 border border-gold-500/30 hover:border-gold-400/80 transition-all text-sm"
                 >
                   <span className="w-6 h-6 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xs font-bold border border-gold-400/40">
                     {user?.name?.charAt(0).toUpperCase() || "C"}
@@ -160,16 +160,16 @@ export const Navbar = ({ onOpenAuth, onOpenProfile, onScrollToSection, onOpenSea
                 )}
               </div>
             ) : (
-              <div className="flex items-center space-x-2">
+              <div className="hidden sm:flex items-center space-x-2">
                 <button
                   onClick={() => onOpenAuth("login")}
-                  className="text-xs tracking-wider uppercase px-3 py-1.5 text-cream-200 hover:text-gold-400 font-medium transition-colors"
+                  className="text-xs tracking-wider uppercase px-2.5 sm:px-3 py-1.5 text-cream-200 hover:text-gold-400 font-medium transition-colors"
                 >
                   Sign In
                 </button>
                 <button
                   onClick={() => onOpenAuth("register")}
-                  className="btn-gold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider hidden sm:flex items-center space-x-1"
+                  className="btn-gold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider hidden lg:flex items-center space-x-1"
                 >
                   <Sparkles className="w-3 h-3" />
                   <span>Join Cellar</span>
@@ -180,9 +180,10 @@ export const Navbar = ({ onOpenAuth, onOpenProfile, onScrollToSection, onOpenSea
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-cream-200 hover:text-gold-400"
+              aria-label="Toggle mobile menu"
+              className="md:hidden p-1.5 sm:p-2 text-cream-200 hover:text-gold-400"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>

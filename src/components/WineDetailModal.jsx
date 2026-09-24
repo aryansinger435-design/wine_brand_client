@@ -44,7 +44,7 @@ export const WineDetailModal = ({ wine, onClose }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-noir-950/85 backdrop-blur-md animate-fadeIn">
       
       {/* Modal Container */}
-      <div className="relative w-full max-w-4xl luxury-glass rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-2xl max-h-[92vh] overflow-y-auto md:overflow-hidden flex flex-col md:flex-row">
+      <div className="relative w-full max-w-4xl luxury-glass rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-2xl max-h-[92vh] overflow-y-auto md:overflow-hidden flex flex-col md:flex-row overflow-x-hidden">
         
         {/* Close Button */}
         <button
@@ -56,8 +56,8 @@ export const WineDetailModal = ({ wine, onClose }) => {
         </button>
 
         {/* Left Column: Image & Badges */}
-        <div className="w-full md:w-5/12 bg-gradient-to-b from-wine-900/50 to-noir-950/90 p-6 sm:p-8 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-gold-500/20 shrink-0">
-          <div className="relative h-52 sm:h-64 md:h-96 w-full flex items-center justify-center">
+        <div className="w-full md:w-5/12 bg-gradient-to-b from-wine-900/50 to-noir-950/90 p-5 sm:p-8 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-gold-500/20 shrink-0">
+          <div className="relative h-48 sm:h-64 md:h-96 w-full flex items-center justify-center">
             <img
               src={wine.imageUrl}
               alt={wine.name}
@@ -76,7 +76,7 @@ export const WineDetailModal = ({ wine, onClose }) => {
         </div>
 
         {/* Right Column: Information & Tasting Notes */}
-        <div className="w-full md:w-7/12 p-5 sm:p-8 md:overflow-y-auto md:max-h-[92vh] flex flex-col justify-between">
+        <div className="w-full md:w-7/12 p-4 sm:p-8 md:overflow-y-auto md:max-h-[92vh] flex flex-col justify-between">
           <div>
             {/* Title & Rating */}
             <div className="flex items-center justify-between gap-2 mb-2">
@@ -90,7 +90,7 @@ export const WineDetailModal = ({ wine, onClose }) => {
               </div>
             </div>
 
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-cream-50 mb-2">
+            <h2 className="font-serif text-xl sm:text-3xl font-bold text-cream-50 mb-2">
               {wine.name}
             </h2>
 
@@ -99,10 +99,10 @@ export const WineDetailModal = ({ wine, onClose }) => {
             </p>
 
             {/* CRUCIAL REQUIREMENT: Mfg Date & Expiry Date Highlight Box */}
-            <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-noir-900/80 border border-gold-500/30 mb-6 shadow-inner">
-              <div className="border-r border-gold-500/20 pr-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 p-3 sm:p-3.5 rounded-xl bg-noir-900/80 border border-gold-500/30 mb-6 shadow-inner">
+              <div className="border-b sm:border-b-0 sm:border-r border-gold-500/20 pb-2 sm:pb-0 pr-0 sm:pr-2">
                 <div className="flex items-center space-x-1.5 text-cream-300/80 mb-1">
-                  <Calendar className="w-4 h-4 text-gold-400" />
+                  <Calendar className="w-4 h-4 text-gold-400 shrink-0" />
                   <span className="text-xs uppercase font-medium tracking-wider">
                     Manufacturing Date:
                   </span>
@@ -113,9 +113,9 @@ export const WineDetailModal = ({ wine, onClose }) => {
                 <span className="text-[10px] text-cream-300/50 block">Certified Cellar Bottling</span>
               </div>
 
-              <div className="pl-2">
+              <div className="pl-0 sm:pl-2">
                 <div className="flex items-center space-x-1.5 text-cream-300/80 mb-1">
-                  <Clock className="w-4 h-4 text-amber-400" />
+                  <Clock className="w-4 h-4 text-amber-400 shrink-0" />
                   <span className="text-xs uppercase font-medium tracking-wider">
                     Expiry / Best Before:
                   </span>

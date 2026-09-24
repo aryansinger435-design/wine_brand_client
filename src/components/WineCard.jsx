@@ -117,26 +117,26 @@ export const WineCard = ({ wine, onQuickView }) => {
         </div>
 
         {/* Price in INR & Add to Cart Action */}
-        <div className="flex items-center justify-between mt-1">
-          <div>
-            <div className="flex items-baseline space-x-2">
-              <span className="font-serif text-xl sm:text-2xl font-bold text-cream-50 gold-text-gradient">
+        <div className="flex items-center justify-between gap-2 mt-1">
+          <div className="min-w-0 flex-1">
+            <div className="flex items-baseline space-x-1.5 sm:space-x-2 flex-wrap">
+              <span className="font-serif text-lg sm:text-2xl font-bold text-cream-50 gold-text-gradient truncate">
                 {formattedPrice}
               </span>
               {formattedOriginalPrice && (
-                <span className="text-xs text-cream-300/50 line-through">
+                <span className="text-[11px] sm:text-xs text-cream-300/50 line-through">
                   {formattedOriginalPrice}
                 </span>
               )}
             </div>
-            <span className="text-[10px] uppercase tracking-wider text-gold-400/80 block">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-gold-400/80 block truncate">
               Direct Cellar Price (INR)
             </span>
           </div>
 
           <button
             onClick={() => addToCart(wine, 1)}
-            className="btn-gold px-3.5 py-2 rounded-xl text-xs uppercase tracking-wider font-semibold flex items-center space-x-1.5 active:scale-95"
+            className="btn-gold px-3 sm:px-3.5 py-2 rounded-xl text-xs uppercase tracking-wider font-semibold flex items-center space-x-1.5 active:scale-95 shrink-0"
           >
             <ShoppingBag className="w-3.5 h-3.5 text-noir-950" />
             <span>Add</span>

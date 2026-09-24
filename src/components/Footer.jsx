@@ -17,19 +17,19 @@ export const Footer = ({ onOpenAuth, onToast }) => {
   };
 
   return (
-    <footer className="bg-noir-950 border-t border-gold-500/20 pt-12 sm:pt-16 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <footer className="bg-noir-950 border-t border-gold-500/20 pt-10 sm:pt-16 pb-8 sm:pb-12 px-3 sm:px-6 lg:px-8 w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         
         {/* Top Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-gold-500/15">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-8 sm:pb-12 border-b border-gold-500/15">
           
           {/* Col 1: Brand Info */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full border border-gold-400/40 bg-wine-900/60 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full border border-gold-400/40 bg-wine-900/60 flex items-center justify-center shrink-0">
                 <Wine className="w-5 h-5 text-gold-400" />
               </div>
-              <span className="font-serif tracking-[0.2em] text-lg font-bold gold-text-gradient uppercase">
+              <span className="font-serif tracking-[0.15em] sm:tracking-[0.2em] text-base sm:text-lg font-bold gold-text-gradient uppercase">
                 Château Dhariwal
               </span>
             </div>
@@ -37,7 +37,7 @@ export const Footer = ({ onOpenAuth, onToast }) => {
               Fine estate reserve wines crafted with single-terroir passion. Transparently priced in Indian Rupees (₹) with certified bottling lineages.
             </p>
             <div className="flex items-center space-x-2 text-[11px] text-gold-400 font-mono">
-              <ShieldCheck className="w-4 h-4" />
+              <ShieldCheck className="w-4 h-4 shrink-0" />
               <span>Certified Connoisseur Vault</span>
             </div>
           </div>
@@ -101,13 +101,13 @@ export const Footer = ({ onOpenAuth, onToast }) => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-300/50 gap-4">
-          <p>
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-300/50 gap-3 sm:gap-4 text-center sm:text-left">
+          <p className="text-center sm:text-left">
             &copy; {new Date().getFullYear()} Château Dhariwal Luxury Wines Pvt. Ltd. All rights reserved.
           </p>
-          <div className="flex items-center space-x-4 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-4 text-[11px] text-center">
             <span>100% Indian Rupee Currency Pricing</span>
-            <span>&bull;</span>
+            <span className="hidden sm:inline">&bull;</span>
             <span>Certified Bottling Standards</span>
           </div>
         </div>

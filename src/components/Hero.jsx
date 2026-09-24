@@ -5,30 +5,30 @@ export const Hero = ({ onExploreWines, onLearnMore }) => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-wine-gradient"
+      className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden w-full max-w-full bg-wine-gradient"
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-wine-600/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute -bottom-20 -right-20 w-[450px] h-[450px] bg-gold-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] bg-wine-600/15 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 sm:-bottom-20 sm:-right-20 w-56 h-56 sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] bg-gold-600/10 rounded-full blur-[90px] sm:blur-[140px] pointer-events-none" />
 
       {/* Decorative luxury vintage watermark */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
-        <span className="font-serif text-[18vw] font-extrabold text-gold-400 tracking-tighter">
+      <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none overflow-hidden max-w-full">
+        <span className="font-serif text-[12vw] sm:text-[18vw] font-extrabold text-gold-400 tracking-tighter truncate max-w-full">
           DHARIWAL
         </span>
       </div>
 
-      <div className="relative max-w-5xl mx-auto text-center z-10">
+      <div className="relative max-w-5xl mx-auto text-center z-10 w-full">
         
         {/* Crown & Tagline */}
-        <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-wine-900/80 border border-gold-500/40 text-gold-300 text-xs font-serif uppercase tracking-[0.25em] mb-8 shadow-gold-glow animate-fadeIn">
-          <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-          <span>The Sovereign Vintage Heritage</span>
-          <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+        <div className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-wine-900/80 border border-gold-500/40 text-gold-300 text-[10px] sm:text-xs font-serif uppercase tracking-[0.1em] sm:tracking-[0.25em] mb-6 sm:mb-8 shadow-gold-glow animate-fadeIn max-w-[96%] sm:max-w-none mx-auto">
+          <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-gold-400 shrink-0" />
+          <span className="truncate">The Sovereign Vintage Heritage</span>
+          <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-gold-400 shrink-0" />
         </div>
 
         {/* Grand Title */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-cream-50 leading-[1.15] sm:leading-[1.1] mb-5 sm:mb-6">
+        <h1 className="font-serif text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-cream-50 leading-[1.18] sm:leading-[1.1] mb-4 sm:mb-6 break-words px-1">
           Bottled Grandeur,{" "}
           <span className="gold-text-gradient block mt-1">
             Enduring Heritage.
@@ -36,24 +36,24 @@ export const Hero = ({ onExploreWines, onLearnMore }) => {
         </h1>
 
         {/* Narrative Description */}
-        <p className="text-cream-200/80 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-8 sm:mb-10 px-2 sm:px-0">
+        <p className="text-cream-200/80 text-xs sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-8 sm:mb-10 px-2 sm:px-0 break-words">
           Handcrafted from single-vineyard low yield harvests, aged in toasted French oak barrels, 
           and priced transparently in <strong className="text-gold-300 font-medium">Indian Rupees (₹)</strong> with 
           verifiable <strong className="text-gold-300 font-medium">Manufacturing & Cellaring Expiry Dates</strong>.
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-12 sm:mb-16 w-full max-w-md sm:max-w-none mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-10 sm:mb-16 w-full max-w-xs sm:max-w-none mx-auto">
           <button
             onClick={onExploreWines}
-            className="w-full sm:w-auto btn-gold px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-serif text-xs sm:text-sm tracking-widest uppercase flex items-center justify-center space-x-3 group active:scale-95"
+            className="w-full sm:w-auto btn-gold px-5 sm:px-8 py-3 sm:py-4 rounded-full font-serif text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase flex items-center justify-center space-x-2.5 sm:space-x-3 group active:scale-95 shadow-gold-glow"
           >
-            <Wine className="w-4 h-4 text-noir-950 transition-transform group-hover:rotate-12" />
+            <Wine className="w-4 h-4 text-noir-950 transition-transform group-hover:rotate-12 shrink-0" />
             <span>Explore Cellar Collection</span>
           </button>
           <button
             onClick={onLearnMore}
-            className="w-full sm:w-auto btn-wine-outline px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-serif text-xs sm:text-sm tracking-widest uppercase transition-all active:scale-95"
+            className="w-full sm:w-auto btn-wine-outline px-5 sm:px-8 py-3 sm:py-4 rounded-full font-serif text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase transition-all active:scale-95"
           >
             Cellar Story & Craft
           </button>

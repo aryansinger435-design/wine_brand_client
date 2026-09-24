@@ -60,7 +60,7 @@ export const CartDrawer = ({ onOpenAuth, onToast }) => {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
-        <div className="w-screen max-w-md bg-gradient-to-b from-wine-950 via-noir-900 to-noir-950 border-l border-gold-500/30 shadow-2xl p-4 sm:p-6 flex flex-col justify-between">
+        <div className="w-full max-w-md bg-gradient-to-b from-wine-950 via-noir-900 to-noir-950 border-l border-gold-500/30 shadow-2xl p-4 sm:p-6 flex flex-col justify-between">
           
           {/* Header */}
           <div className="flex items-center justify-between pb-4 border-b border-gold-500/20">

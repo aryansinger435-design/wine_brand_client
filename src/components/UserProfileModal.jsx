@@ -24,7 +24,7 @@ export const UserProfileModal = ({ isOpen, onClose, onToast }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-noir-950/85 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-md luxury-glass rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-2xl p-5 sm:p-8 max-h-[92vh] overflow-y-auto">
+      <div className="relative w-full max-w-md luxury-glass rounded-2xl sm:rounded-3xl border border-gold-500/30 shadow-2xl p-4 sm:p-8 max-h-[92vh] overflow-y-auto overflow-x-hidden">
         
         {/* Close Button */}
         <button

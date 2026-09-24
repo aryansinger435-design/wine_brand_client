@@ -93,7 +93,7 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
   }, [selectedCategory, searchQuery, sortBy]);
 
   return (
-    <section id="wines" className="py-12 sm:py-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="wines" className="py-10 sm:py-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full overflow-hidden">
       
       {/* Section Header */}
       <div className="text-center mb-8 sm:mb-12">
@@ -102,7 +102,7 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
           <span>Curated Heritage Vintages</span>
           <Wine className="w-4 h-4" />
         </div>
-        <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-cream-50 mb-3 sm:mb-4">
+        <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-cream-50 mb-2 sm:mb-4">
           The Grand Cellar Collection
         </h2>
         <p className="text-cream-300/70 text-xs sm:text-sm md:text-base max-w-2xl mx-auto px-2">
@@ -112,15 +112,15 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
       </div>
 
       {/* Filter and Control Bar */}
-      <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
+      <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10 w-full max-w-full">
         
         {/* Category Tabs */}
-        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-2 scrollbar-none gap-2 sm:gap-3 px-1 scroll-smooth">
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto pb-2 scrollbar-none gap-1.5 sm:gap-3 px-1 scroll-smooth w-full max-w-full">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-serif uppercase tracking-wider whitespace-nowrap transition-all duration-200 active:scale-95 ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-serif uppercase tracking-wider whitespace-nowrap transition-all duration-200 active:scale-95 shrink-0 ${
                 selectedCategory === cat
                   ? "bg-gold-500 text-noir-950 font-bold shadow-gold-glow"
                   : "bg-wine-900/40 text-cream-200/80 border border-gold-500/20 hover:border-gold-400/50 hover:text-cream-50"
@@ -132,14 +132,14 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
         </div>
 
         {/* Search & Sort Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 p-2.5 sm:p-3 rounded-2xl bg-noir-900/70 border border-gold-500/20">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4 p-2.5 sm:p-3 rounded-2xl bg-noir-900/70 border border-gold-500/20 w-full max-w-full">
           
           {/* Search Box */}
-          <div className="relative w-full sm:w-80">
+          <div className="relative w-full sm:w-80 min-w-0">
             <Search className="w-4 h-4 text-gold-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
-              placeholder="Search by wine name, region, grape..."
+              placeholder="Search wine name, region, grape..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 text-xs rounded-xl bg-wine-950/60 border border-gold-500/20 text-cream-100 placeholder-cream-300/40 focus:outline-none focus:border-gold-400 transition-colors"
@@ -147,7 +147,7 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
           </div>
 
           {/* Sorter */}
-          <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-3">
+          <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-2 sm:gap-3 min-w-0">
             <span className="text-xs text-cream-300/60 font-medium flex items-center space-x-1 shrink-0">
               <ArrowUpDown className="w-3.5 h-3.5 text-gold-400" />
               <span>Sort:</span>
@@ -155,7 +155,7 @@ export const WineCatalog = ({ onQuickView, searchQuery, setSearchQuery }) => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-wine-950/80 border border-gold-500/20 text-cream-100 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-gold-400 font-serif cursor-pointer w-full sm:w-auto"
+              className="bg-wine-950/80 border border-gold-500/20 text-cream-100 text-xs rounded-xl px-2.5 sm:px-3 py-2 focus:outline-none focus:border-gold-400 font-serif cursor-pointer flex-1 sm:flex-initial min-w-0"
             >
               <option value="default">Featured Reserve</option>
               <option value="price_asc">Price: Low to High (₹)</option>

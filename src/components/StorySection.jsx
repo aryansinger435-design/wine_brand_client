@@ -3,15 +3,15 @@ import { Wine, Calendar, Award, Sparkles, Clock, ShieldCheck } from "lucide-reac
 
 export const StorySection = () => {
   return (
-    <div className="space-y-16 sm:space-y-24 py-12 sm:py-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="space-y-14 sm:space-y-24 py-10 sm:py-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full overflow-hidden">
       
       {/* 1. Craft & Heritage */}
-      <section id="craft" className="relative">
+      <section id="craft" className="relative w-full overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           
           {/* Visual Showcase */}
-          <div className="relative">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-gold-500/30 shadow-luxury group">
+          <div className="relative w-full">
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-gold-500/30 shadow-luxury group w-full">
               <img
                 src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1000&q=80"
                 alt="Cellar Barrels"
@@ -21,14 +21,14 @@ export const StorySection = () => {
               
               <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-noir-950/85 backdrop-blur-md border border-gold-500/30">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center border border-gold-400/40">
-                    <Wine className="w-5 h-5" />
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center border border-gold-400/40 shrink-0">
+                    <Wine className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <div>
-                    <h4 className="font-serif text-sm font-bold text-cream-100">
+                  <div className="min-w-0">
+                    <h4 className="font-serif text-xs sm:text-sm font-bold text-cream-100 truncate">
                       French Oak Barrel Fermentation
                     </h4>
-                    <p className="text-xs text-cream-300/70">
+                    <p className="text-[11px] sm:text-xs text-cream-300/70 truncate">
                       Aged 12 to 24 months in medium-toast oak casks
                     </p>
                   </div>
@@ -38,46 +38,46 @@ export const StorySection = () => {
           </div>
 
           {/* Narrative Story */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <div className="inline-flex items-center space-x-2 text-gold-400 text-xs font-serif uppercase tracking-[0.2em]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Cellar Craftsmanship</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-cream-50 leading-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-cream-50 leading-tight">
               Where Ancient Soils Meet Sovereign Winemaking.
             </h2>
 
-            <p className="text-cream-200/80 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-cream-200/80 text-xs sm:text-base leading-relaxed font-light">
               At <strong>Château Dhariwal</strong>, we believe every bottle captures a singular year of weather, rain, and sun. Our grapes are handpicked exclusively at dawn when temperatures are crisp, preserving delicate aromatics and vibrant natural acidity.
             </p>
 
-            <p className="text-cream-300/70 text-sm leading-relaxed font-light">
+            <p className="text-cream-300/70 text-xs sm:text-sm leading-relaxed font-light">
               Each lot is vinified separately in micro-fermenters before resting quietly in our subterranean stone vaults. We take pride in complete transparency: transparent <strong>Indian Rupee (₹)</strong> fair cellar pricing, with certified bottling lineage.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-xl bg-wine-950/50 border border-gold-500/20">
-                <span className="font-serif text-2xl font-bold gold-text-gradient">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <div className="p-3 sm:p-4 rounded-xl bg-wine-950/50 border border-gold-500/20 min-w-0">
+                <span className="font-serif text-xl sm:text-2xl font-bold gold-text-gradient block">
                   100%
                 </span>
-                <p className="text-xs text-cream-200 font-semibold mt-1">
+                <p className="text-xs text-cream-200 font-semibold mt-1 truncate">
                   Hand-Harvested Fruit
                 </p>
-                <p className="text-[11px] text-cream-300/60 mt-0.5">
-                  Picked at optimal phenolic ripeness
+                <p className="text-[10px] sm:text-[11px] text-cream-300/60 mt-0.5 truncate">
+                  Picked at optimal ripeness
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl bg-wine-950/50 border border-gold-500/20">
-                <span className="font-serif text-2xl font-bold gold-text-gradient">
+              <div className="p-3 sm:p-4 rounded-xl bg-wine-950/50 border border-gold-500/20 min-w-0">
+                <span className="font-serif text-xl sm:text-2xl font-bold gold-text-gradient block">
                   ₹ INR
                 </span>
-                <p className="text-xs text-cream-200 font-semibold mt-1">
-                  Transparent Indian Pricing
+                <p className="text-xs text-cream-200 font-semibold mt-1 truncate">
+                  Transparent Pricing
                 </p>
-                <p className="text-[11px] text-cream-300/60 mt-0.5">
-                  No hidden duties or overseas markups
+                <p className="text-[10px] sm:text-[11px] text-cream-300/60 mt-0.5 truncate">
+                  Direct cellar ₹ rates
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export const StorySection = () => {
       </section>
 
       {/* 2. Manufacturing & Ageing Guide (Why Mfg & Exp Dates Matter) */}
-      <section id="aging-guide" className="p-5 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl luxury-glass border border-gold-500/30">
+      <section id="aging-guide" className="p-4 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl luxury-glass border border-gold-500/30 w-full overflow-hidden">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
           <div className="inline-flex items-center space-x-2 text-gold-400 text-xs font-serif uppercase tracking-[0.2em] mb-2">
             <Calendar className="w-4 h-4" />
@@ -106,7 +106,7 @@ export const StorySection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           
-          <div className="p-5 rounded-2xl bg-noir-900/80 border border-gold-500/20 flex flex-col justify-between">
+          <div className="p-4 sm:p-5 rounded-2xl bg-noir-900/80 border border-gold-500/20 flex flex-col justify-between min-w-0">
             <div>
               <div className="w-10 h-10 rounded-xl bg-wine-900/60 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4">
                 <Calendar className="w-5 h-5" />
@@ -123,7 +123,7 @@ export const StorySection = () => {
             </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-noir-900/80 border border-gold-500/20 flex flex-col justify-between">
+          <div className="p-4 sm:p-5 rounded-2xl bg-noir-900/80 border border-gold-500/20 flex flex-col justify-between min-w-0">
             <div>
               <div className="w-10 h-10 rounded-xl bg-wine-900/60 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4">
                 <Clock className="w-5 h-5" />
@@ -140,7 +140,7 @@ export const StorySection = () => {
             </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-noir-900/80 border border-gold-500/20 flex flex-col justify-between">
+          <div className="p-4 sm:p-5 rounded-2xl bg-noir-900/80 border border-gold-500/20 flex flex-col justify-between min-w-0">
             <div>
               <div className="w-10 h-10 rounded-xl bg-wine-900/60 border border-gold-500/30 flex items-center justify-center text-gold-400 mb-4">
                 <ShieldCheck className="w-5 h-5" />

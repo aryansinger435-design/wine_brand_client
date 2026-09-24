@@ -46,7 +46,7 @@ export function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-noir-950 text-cream-100 flex flex-col font-sans selection:bg-gold-500 selection:text-noir-950">
+    <div className="min-h-screen bg-noir-950 text-cream-100 flex flex-col font-sans selection:bg-gold-500 selection:text-noir-950 w-full max-w-full overflow-x-hidden relative">
       
       {/* Navigation */}
       <Navbar
@@ -63,7 +63,7 @@ export function AppContent() {
       />
 
       {/* Main Wine Catalog (Crucial Feature: INR Pricing, Mfg Date, Exp Date) */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full min-w-0 overflow-x-hidden">
         <WineCatalog
           onQuickView={(wine) => setSelectedWine(wine)}
           searchQuery={searchQuery}
